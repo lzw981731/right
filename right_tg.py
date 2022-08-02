@@ -12,10 +12,10 @@ import os
 
 # 获得cookie
 def getcookies():
-    url = 'https://www.hostloc.com/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline'
+    url = 'https://www.right.com.cn/FORUM/forum.php?mod=forumdisplay&fid=88&filter=author&orderby=dateline'
     js = js2py.EvalJs()
     headers = {'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36'}
-    aesjs = requests.get("https://www.hostloc.com/aes.min.js", headers=headers, timeout=5).text
+    aesjs = requests.get("https://www.right.com.cn/FORUM/aes.min.js", headers=headers, timeout=5).text
     js.execute(aesjs)
     getcookie = requests.get(url).text
     getcookie_script = re.findall("<script>(.*?)</script>",getcookie)
@@ -102,9 +102,9 @@ def master(r):
                 # print(i)
                 k = i + 1
                 # print(k)
-                url_list = "https://www.hostloc.com/{}".format(href_list[i])
+                url_list = "https://www.right.com.cn/FORUM/{}".format(href_list[i])
                 # 作者id链接
-                url_author = "https://www.hostloc.com/{}".format(author_url[k])
+                url_author = "https://www.right.com.cn/FORUM/{}".format(author_url[k])
                 # 时间戳
                 time_1 = time.strftime("%Y-%m-%d    %H:%M:%S", time.localtime())
                 date_1 = get_week_day(datetime.datetime.now())
@@ -141,7 +141,7 @@ def master_1(r):
                 # 转换链接：
                 str_url = href_list[i].replace("forum.php?mod=viewthread&tid=", '').replace("&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline&mobile=1", '')
 
-                url_list = "https://www.hostloc.com/thread-{0}-1-1.html".format(str_url)
+                url_list = "https://www.right.com.cn/FORUM/thread-{0}-1-1.html".format(str_url)
                 # 时间戳
                 time_1 = time.strftime("%Y-%m-%d    %H:%M:%S", time.localtime())
                 date_1 = get_week_day(datetime.datetime.now())
@@ -187,7 +187,7 @@ def get_content_1(url):
 
 
 hostloc_list = {"hello"}
-url_1 = "https://www.hostloc.com/"
+url_1 = "https://www.right.com.cn/FORUM/"
 headers = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -197,7 +197,7 @@ headers = {
     'Cache-Control': 'no-cache',
     'Connection': 'keep-alive',
 }
-url_hostloc = "https://www.hostloc.com/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline"
+url_hostloc = "https://www.right.com.cn/FORUM/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline"
 
 while True:
         try:
@@ -205,7 +205,7 @@ while True:
             cookiestr = getcookies()
             print(cookiestr)
             print("1")
-            url = 'https://www.hostloc.com/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline'
+            url = 'https://www.right.com.cn/FORUM/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline'
             headers = {
                 'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36'}
             requests.adapters.DEFAULT_RETRIES = 5
@@ -235,7 +235,7 @@ while True:
                     'Cache-Control': 'no-cache',
                     'Connection': 'keep-alive',
                 }
-                url_hostloc = "https://www.hostloc.com/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline"
+                url_hostloc = "https://www.right.com.cn/FORUM/forum.php?mod=forumdisplay&fid=45&filter=author&orderby=dateline"
                 r = requests.get(url_hostloc, headers=headers)
                 master(r)
                 time.sleep(20)
