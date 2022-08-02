@@ -38,9 +38,9 @@ TG_ID 内容填写群组ID或者个人ID
 
 ###### ht.sh文件说明：
 
-由于hostloc有时开启防御模式，导致部分国外ip无法访问hostloc，getupdate错误导致掉线，后台运行一个自动重新连接脚本
+由于right有时开启防御模式，导致部分国外ip无法访问right，getupdate错误导致掉线，后台运行一个自动重新连接脚本
 
-使用方法：linux添加定时任务，**ht.sh存放在root目录下**，注意，ht脚本里的里需要修改为你的hostloc_tg.py的路径（**可不用设置后台运行，目前程序改版，解决了getupdate问题**）
+使用方法：linux添加定时任务，**ht.sh存放在root目录下**，注意，ht脚本里的里需要修改为你的right_tg.py的路径（**可不用设置后台运行，目前程序改版，解决了getupdate问题**）
 
 ~~~
 */30 * * * * /root/ht.sh
@@ -56,7 +56,7 @@ if [ "$PIDS" != "" ]; then
 	echo "myprocess is running!"
 else
 	echo "未发现程序后台运行，正在重启中！"
-	/usr/bin/python3 /root/hostloc_tg.py &
+	/usr/bin/python3 /root/right_tg.py &
 fi
 ~~~
 
