@@ -4,7 +4,7 @@
 
 推送效果：https://rss.vipkj.net/
 
-推送源码来自：https://github.com/w2r/hostloc2tg
+推送修改自：https://github.com/w2r/hostloc2tg
 
 
 ####### 更新说明。
