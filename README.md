@@ -1,4 +1,4 @@
-### ***使用 GitHub Actions 推送 Hostloc 新帖到TG群组/个人***
+### ***使用 GitHub Actions 推送 恩山物品转让或求购板块 新帖到TG群组/个人***
 
 ####### 简介：
 
