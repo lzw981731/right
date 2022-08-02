@@ -10,7 +10,7 @@ import re
 import js2py
 import os
 
-# 获得cookie
+## 获得cookie
 def getcookies():
     url = 'https://www.right.com.cn/FORUM/forum.php?mod=forumdisplay&fid=88&filter=author&orderby=dateline'
     js = js2py.EvalJs()
